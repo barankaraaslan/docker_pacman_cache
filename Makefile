@@ -1,6 +1,6 @@
 build:
 	docker build . --tag pacman_cache
-	docker container create -p 8080:80 --name="pacman_cache" pacman_cache
+	docker container create --restart=always -p 8080:80 --name="pacman_cache" pacman_cache
 
 start:
 	docker container start pacman_cache 
